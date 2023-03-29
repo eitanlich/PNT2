@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Listado de peliculas</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Listado de peliculas</h1>
+    <form>
+        <label>Titulo:</label>
+        <input type="text" id="titulo">
+        <br>
+        <label>Año de estreno:</label>
+        <input type="number" id="anio">
+        <br>
+        <label>ID:</label>
+        <input type="number" id="id">
+        <br>
+        <input type="submit" value="Cargar pelicula" onsubmit="agregarPelicula()">
+        <input type="button" value="Mostrar peliculas" onclick="mostrarPeliculas()">
+        <input type="button" value="Orden ascendente" onclick="ordenarAsc()">
+        <input type="button" value="Orden descendente" onclick="ordenarDesc()">
+    </form>
+    <div id="peliculas"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

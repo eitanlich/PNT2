@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Condiciones del partido de futbol</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Condiciones del partido de futbol</h1>
+    <form>
+        <label for="pelota">Hay pelota?:</label>
+        <input type="checkbox" id="hayPelota">
+        <br>
+        <label for="equipoA">Cantidad de jugadores del equipo A:</label>
+        <input type="number" id="equipoA">
+        <br>
+        <label for="equipoB">Cantidad de jugadores del equipo B:</label>
+        <input type="number" id="equipoB">
+        <br>
+        <label for="edad">Todos los jugadores son mayores de 18?:</label>
+        <input type="checkbox" id="mayores18">
+        <br>
+        <label for="clima">Las condiciones climaticas son buenas?:</label>
+        <input type="checkbox" id="buenClima">
+        <br>
+        <input type="button" value="Se puede empezar?" onclick="comprobarCondiciones()">
+    </form>
+    <div id="resultado"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

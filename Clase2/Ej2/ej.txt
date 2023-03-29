@@ -1,0 +1,6 @@
+En base a una lista de peliculas donde cada pelicula tiene. Nombre, Año de Estreno, Id
+Ordenar todos los objetos de la misma por nombre y mostrarlo por pantalla.
+3.b) Hacer que se pueda ordenar con un boton HTML ascendente y descendente.
+3.c) Poder eliminar algun elemento de la lista en base a un Id
+3.e) Con un boton de html poder generar por pantalla el resultado de todas las peliculas
+de forma "Pelicula(año de estreno)"
