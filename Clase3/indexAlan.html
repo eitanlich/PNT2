@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <h3>Seleccione el orden deseado</h3>
+            <select id="select" v-model="selection" v-on:change="update($event)">
+                <option value="rank">Rank</option>
+                <option value="supply" selected>Supply</option>
+                <option value="priceUsd">priceUsd</option>
+                <option value="changePercent24Hr">changePercent24Hr</option>
+              </select>
+        </div>
+        <div v-for="(item, index) in coinsparsed":key="coinsparsed">
+            Id : {{ item.id }}<br>
+            Change: {{ item.changePercent24Hr}}<br>
+            Rank: {{item.rank}}<br>
+            Supply: {{item.supply}}<br>
+            Price: {{item.priceUsd}}
+            <hr>
+        </div>
+    </div>
+</body>
+<script> 
+    var app = new Vue({ 
+    el: '#app',
+    data: {
+        coinsparsed: [],
+        coins: [],
+        selection: "changePercent24Hr"
+    },
+    computed:{
+    },
+    methods: {
+        update: function update(event){   
+            this.selection = event.target.value
+            console.log(this.selection)
+
+            this.coinsparsed = this.coins.data.sort((a, b) => a.selection - b.selection);
+            console.log(this.coinsparsed)
+        }
+
+    }
+    ,
+    created: async function () {
+        const coins = await fetch('https://api.coincap.io/v2/assets/');                
+        this.coins = await coins.json();
+        this.coinsparsed = this.coins.data.sort(function(a, b){
+            return a.changePercent24Hr - b.changePercent24Hr
+        })
+
+        console.log(this.coinsparsed);
+    }
+});
+    </script>
+</html> 
